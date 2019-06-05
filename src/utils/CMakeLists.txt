@@ -8,3 +8,4 @@ foreach(util_path ${utils_sources})
 endforeach()
 
 target_link_libraries(mimc Boost::program_options SHA3IUF)
+target_link_libraries(mimc_hash_test_cases Boost::program_options SHA3IUF)
