@@ -95,7 +95,7 @@ void generate_sha3_constants(){
         sha3_Update(&ctx, MIMC_SEED, strlen(MIMC_SEED));
         memcpy(output_digest, sha3_Finalize(&ctx), DIGEST_SIZE_BYTES);
 
-        std::cout << "std::vector<FieldT>& round_constants = [";
+        std::cout << "std::vector<FieldT>& round_constants;";
 
         for( int i = 0; i < MIMC_ROUNDS; i++ )
         {
@@ -118,9 +118,9 @@ void generate_sha3_constants(){
             // Convert to bigint, within F_p
             libff::bigint<FieldT::num_limbs> item(result_as_num);
             assert( sizeof(item.data) == DIGEST_SIZE_BYTES );
-            std::cout << "FieldT(\"";
+            std::cout << "mimc_constants.push_back(FieldT(\"";
             item.print();//NB: for a good print remove the \n from libff print implementation
-            std::cout << "\"), "<< std::endl;
+            std::cout << "\"));"<< std::endl;
 
             mpz_clear(result_as_num);
 
