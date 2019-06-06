@@ -96,7 +96,8 @@ void generate_sha3_constants(){
         memcpy(output_digest, sha3_Finalize(&ctx), DIGEST_SIZE_BYTES);
 
         std::cout << "std::vector<FieldT>& round_constants;";
-
+        std::cout << std::endl;
+        
         for( int i = 0; i < MIMC_ROUNDS; i++ )
         {
             // Derive a sequence of hashes to use as round constants
