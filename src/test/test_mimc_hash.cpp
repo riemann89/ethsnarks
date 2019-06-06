@@ -2,7 +2,7 @@
 // License: LGPL-3.0+
 
 
-#include "gadgets/mimc.hpp"
+#include "gadgets/onewayfunction.hpp"
 #include "stubs.hpp"
 
 namespace ethsnarks {
